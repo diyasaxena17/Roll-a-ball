@@ -24,6 +24,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PickUp")) {
+            other.gameObject.SetActive(false);
+        }
+        
+
+    }
+
     void OnMove (InputValue movementValue){
         Vector2 movementVector = movementValue.Get<Vector2>();
 
